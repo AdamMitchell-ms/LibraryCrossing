@@ -4,6 +4,8 @@
 // change this undef to a define to see the heap corruption assert in debug
 #undef USE_PROBLEMATIC_FACTORY_AND_CAUSE_HEAP_CORRUPTION
 
+// Go to MyClass.h and define ADD_SAFETY_USING_OPERATOR_DELETE to fix things.
+
 int main()
 {
 #ifdef USE_PROBLEMATIC_FACTORY_AND_CAUSE_HEAP_CORRUPTION

@@ -4,9 +4,18 @@
 
 #include <memory>
 
+#undef ADD_SAFETY_USING_OPERATOR_DELETE
+#undef ADD_SAFETY_USING_CUSTOM_DELETER
+
 class LIBRARYFACTORY_API MyClass
 {
+#ifdef ADD_SAFETY_USING_OPERATOR_DELETE
+public:
+    static void operator delete(void* ptr);
+#endif
 };
+
+#ifdef ADD_SAFETY_USING_CUSTOM_DELETER
 
 namespace std
 {
@@ -21,3 +30,5 @@ public:
 };
 
 }
+
+#endif
